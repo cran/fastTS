@@ -48,7 +48,7 @@ pacfs <- pacf(ts(y), lag.max = n_lags_max, plot = F)
 plot(pacfs)
 
 ## ----fit_endo-----------------------------------------------------------------
-srlpac <- fastTS(y, n_lags_max = n_lags_max)
+srlpac <- fastTS(y, n_lags_max = n_lags_max, ptrain = 0.9)
 
 ## ----print_endo---------------------------------------------------------------
 srlpac
@@ -68,7 +68,7 @@ colnames(X) <- gsub("relevel.factor.Month., ref = 3.", "Month", colnames(X))
 head(X)
 
 ## ----fit_exo------------------------------------------------------------------
-srlpacx <- fastTS(y, X=X, n_lags_max = n_lags_max, w_exo = "unpenalized")
+srlpacx <- fastTS(y, X=X, n_lags_max = n_lags_max, w_exo = "unpenalized", ptrain = .9)
 
 ## ----print_exo----------------------------------------------------------------
 srlpacx
@@ -124,8 +124,8 @@ cor(preds, use = "pairwise")
 
 ## ----pred_cumulative----------------------------------------------------------
 y_c10hr <- RcppRoll::roll_sum(y, 10, align = "right", fill = NA)
-p_10step_csum_endo <- predict(srlpac, n_ahead = 10, cumulative = 10)
-p_10step_csum_exo <- predict(srlpacx, n_ahead = 10, cumulative = 10)
+p_10step_csum_endo <- predict(srlpac, n_ahead = 10, cumulative = TRUE)
+p_10step_csum_exo <- predict(srlpacx, n_ahead = 10, cumulative = TRUE)
 
 ## ----mae_overall--------------------------------------------------------------
 mae_vec(y_c10hr, p_10step_csum_endo)

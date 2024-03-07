@@ -22,6 +22,7 @@ X <- as.numeric(time(EuStockMarkets))
 X_sp <- splines::bs(X-min(X), df = 9)
 
 fit_stock <- fastTS(log(EuStockMarkets[,1]), n_lags_max = 400, X = X_sp, w_exo = "unpenalized")
+fit_stock
 tail(coef(fit_stock), 11)
 
 # insert plot? 
@@ -29,12 +30,14 @@ tail(coef(fit_stock), 11)
 ## ----nottem-------------------------------------------------------------------
 data("nottem")
 fit_nt <- fastTS(nottem, n_lags_max = 24)
+fit_nt
 coef(fit_nt)
 
 
 ## ----UKDriverDeaths-----------------------------------------------------------
 data("UKDriverDeaths")
 fit_ukdd <- fastTS(UKDriverDeaths, n_lags_max = 24)
+fit_ukdd
 coef(fit_ukdd)
 
 
