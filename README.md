@@ -25,12 +25,18 @@ variable selection with interactions and/or polynomials, *ranked
 sparsity* is a philosophy of variable selection in the presence of prior
 informational asymmetry.
 
-In time series data with complex seasonality or exogenous features; see
-[Peterson and Cavanaugh
-(2023+)](https://doi.org/10.48550/arXiv.2211.01492), which also
-describes this package in greater detail. The basic premise is to
-utilize the sparsity-ranked lasso (or similar) to be less skeptical of
-more recent lags, and suspected seasonal relationships.
+This package implements such methods for fast fitting of time series
+data with complex seasonality or exogenous features. More information is
+included in [Peterson and Cavanaugh
+(2024)](https://doi.org/10.1177/1471082X231225307). The basic premise is
+to utilize the sparsity-ranked lasso (or similar) to be less skeptical
+of more recent lags, and suspected seasonal relationships.
+
+Please cite `fastTS` as:
+
+Peterson R. A. & Cavanaugh J. E. (2024). Fast, effective, and coherent
+time series modelling using the sparsity-ranked lasso. *Statistical
+Modelling*. <doi:10.1177/1471082X231225307>
 
 ## Installation
 
