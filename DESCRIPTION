@@ -2,7 +2,7 @@ Package: fastTS
 Type: Package
 Title: Fast Time Series Modeling for Seasonal Series with Exogenous
         Variables
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: person("Ryan Andrew", "Peterson", 
                   email = "ryan.a.peterson@cuanschutz.edu", 
                   role = c("aut", "cre", "cph"),
@@ -37,11 +37,11 @@ VignetteBuilder: knitr
 URL: https://petersonr.github.io/fastTS/,
         https://github.com/petersonR/fastTS/
 BugReports: https://github.com/petersonR/fastTS/issues
-Date: 2024-03-28
+Date: 2024-12-01
 NeedsCompilation: no
-Packaged: 2024-03-28 21:21:10 UTC; ryanpeterson
+Packaged: 2024-12-01 22:48:50 UTC; petryan
 Author: Ryan Andrew Peterson [aut, cre, cph]
     (<https://orcid.org/0000-0002-4650-5798>)
 Maintainer: Ryan Andrew Peterson <ryan.a.peterson@cuanschutz.edu>
 Repository: CRAN
-Date/Publication: 2024-03-28 21:40:02 UTC
+Date/Publication: 2024-12-01 23:10:08 UTC
